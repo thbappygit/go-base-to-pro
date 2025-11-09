@@ -19,6 +19,12 @@ import "fmt"
 // func main() → প্রোগ্রামের শুরু পয়েন্ট (entry point)।
 func main() {
 	fmt.Println("hello world")
-	fmt.Printf("hello world\n")
 	fmt.Println("Name:", "Habib", "Age:", 25)
+
+	messageOne := fmt.Sprint("Hello Buddy. Welcome to Go Programming Language\n")
+	fmt.Print(messageOne)
+
+	messageTwo := fmt.Sprintln("You can learn Go from scratch.")
+	fmt.Print(messageTwo)
+
 }
