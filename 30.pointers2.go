@@ -23,7 +23,8 @@ func printF(data *[5]int) {
 
 func developerInfo(test *Developer) {
 
-	fmt.Println(test.Stack)
+	test.Skills = append(test.Skills, "Java", "Laravel")
+	fmt.Println(test.Stack, test.Skills)
 }
 
 func main() {

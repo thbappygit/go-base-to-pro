@@ -1,33 +1,21 @@
 package main
 
-import (
-	"fmt"
-	"sort"
-)
+import "fmt"
 
 func main() {
-	fmt.Println("Hello Slices")
-	var fruitList = []string{"Apple", "Banana", "Orange"}
-	fmt.Printf("Type of fruitList is  %T\n", fruitList)
+	var testData []int
 
-	fruitList = append(fruitList, "Mango", "Grapes")
-	fmt.Println(fruitList)
-	fruitList = append(fruitList[1:3])
-	fmt.Println(fruitList) // ["Banana", "Orange"]
+	testData = make([]int, 5)
 
-	highScores := make([]int, 5)
+	fmt.Println(testData, cap(testData))
 
-	highScores[0] = 865
-	highScores[1] = 645
-	highScores[2] = 756
-	highScores[3] = 800
-	highScores[4] = 532
-	highScores = append(highScores, 782)
+	testData[0] = 5
+	testData = append(testData, 10, 20)
+	testData = append(testData, 30, 40, 50)
+	newTestData := testData[4:6]
 
-	fmt.Println(highScores, len(highScores), cap(highScores))
+	fmt.Println(testData, newTestData)
 
-	sort.Ints(highScores)
-
-	fmt.Println(highScores, sort.IntsAreSorted(highScores))
+	//myData := testData[:2]
 
 }
