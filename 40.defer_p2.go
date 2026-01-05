@@ -40,7 +40,7 @@ func main() {
   Named return values
 ---------------------------
 1. All codes execute first
-2. defer function store kora hobey magic box e
+2. defer function store kora hobey magic box
 3. return ->  just before return defer functions gula execute korbey
 4. return korbey named variables gulor values
 
