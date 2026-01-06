@@ -1,4 +1,4 @@
-# Operating System Concepts - Interview Preparation
+# Operating System Concepts - Preparation
 
 ## Table of Contents
 - [Process](#process)

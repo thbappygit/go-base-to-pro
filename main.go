@@ -2,44 +2,42 @@ package main
 
 import "fmt"
 
-func sayMessage() (message string) {
-	message = "Hello World"
-	fmt.Println(message)
+func testProg() (hello string) {
+	hello = "Hello World"
+	fmt.Println(hello)
+	defer func() {
+		hello = "Hello For Closer defer"
+		fmt.Println(hello)
+	}()
 
-	showNewMessage := func() {
-		message = "Hello Golang"
-		fmt.Println("defer", message)
+	defer func() {
+		hello = "Hello   defer2"
+		fmt.Println(hello)
+	}()
+
+	var arrData = []int{1, 2, 3, 4, 5}
+	for _, value := range arrData {
+		func() {
+			defer fmt.Println("I love you", value)
+		}()
 	}
+	arrData = append(arrData, 6, 7, 8)
+	arrData = make([]int, 10, 11)
 
-	defer showNewMessage()
+	arrData[2] = 3
+	arrData = arrData[:3]
+	fmt.Println(arrData)
 
-	message = "Hello Universe"
-	fmt.Println("last", message)
+	fmt.Println("sliced", arrData)
+
+	fmt.Println("Array Length:", len(arrData))
+	fmt.Println("Array Capacity:", cap(arrData))
+
+	hello = "Hello after Closer defer"
+	fmt.Println(hello)
 	return
 
 }
-func expenses() int {
-	ex := 100
-	ex2 := 200
-	newExpense := func() {
-		ex = ex + ex2
-	}
-	defer newExpense()
-	ex = 50
-
-	return ex
-
-}
-
 func main() {
-
-	sayMessage()
-	fmt.Println(expenses())
-	var data = [5]int{1, 2, 3, 4, 5}
-	for _, v := range data {
-		func() {
-			defer fmt.Println(v)
-		}()
-	}
-
+	testProg()
 }

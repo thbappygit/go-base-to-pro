@@ -1,4 +1,4 @@
-# Operating System Concepts - Golang Way (বাংলায়)
+# Operating System Concepts - Golang Way 
 
 ## Table of Contents
 - [Process - প্রসেস](#process---প্রসেস)
